@@ -37,7 +37,7 @@ variable "cluster_name" {
 variable "cluster_version" {
   description = "Kubernetes version"
   type        = string
-  default     = "1.30"
+  default     = "1.35"
 }
 
 variable "node_groups" {
@@ -53,7 +53,7 @@ variable "node_groups" {
   }))
   default = {
     general = {
-      instance_types = ["t3.medium"]
+      instance_types = ["m7i-flex.large"] # Free-plan accounts can only launch free-tier-eligible types
       capacity_type  = "ON_DEMAND"
       scaling_config = {
         desired_size = 2

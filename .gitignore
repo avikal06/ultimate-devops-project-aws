@@ -1,0 +1,33 @@
+# Terraform local data / providers (large binaries)
+**/.terraform/*
+.terraform.lock.hcl
+
+# Terraform state can contain sensitive values - keep it in the S3 backend only
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Variable files often hold secrets
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Credentials and keys - never commit
+.aws/
+credentials
+*.pem
+*.key
+.env
+.env.*
+kubeconfig
+*.kubeconfig
+
+# OS
+.DS_Store
